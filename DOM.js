@@ -29,3 +29,12 @@
 
 
 console.log(document);
+
+
+// Dom Manipulation Method
+
+//Manipulasi Element
+    //element.innerHTML = mengubah text yang diseleksi
+    //element.style.<property> = mengubah style atau css dari sebuah element yang diseleksi
+    //element.setAttribute() = memanipulasi atribut pada sebuah element yang melekat pada element yang sudah kita seleksi
+    //element.classList = memanipulasi class yan kita seleksi
