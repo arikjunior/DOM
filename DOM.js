@@ -46,3 +46,10 @@ node.appendChild()
 node.insertBefore()
 parentNode.removeChild()
 parentNode.replaceChild()
+
+parentNode.append() //menambakan di akhir element
+parentNode.prepend() //menambakan di awal element
+childNode.before()
+childNode.after()
+childNode.remove()
+childNode.replaceWith()
