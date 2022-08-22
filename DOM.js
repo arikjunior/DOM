@@ -53,3 +53,14 @@ childNode.before()
 childNode.after()
 childNode.remove()
 childNode.replaceWith()
+
+
+
+/////// EVENT
+//event pada javascript mempresentasikan sebuah kejadian yang terjadi didalam DOM. kejadian tersebt bisa dilakukan oleh user (mouse event, keyboard event, dll) ataupun dilakukan secara otomatis oleh API (animasi selesai dijalankan, halaman selesai di load, dll)
+
+// Cara "mendengarkan" event
+    //Event Handler
+        //Inline HTML attribute
+        //Element Method
+    //addEventListener();
