@@ -10,7 +10,7 @@ function getHasil(comp, player) {
     if (player == comp) return 'SERI!';
     if (player == 'gajah') return (comp == 'orang') ? 'MENANG!' : 'KALAH!';
     if (player == 'orang') return (comp == 'gajah') ? 'KALAH!' : 'MENANG!';
-    if (player == 'semut') return (comp == 'orang') ? 'KALAH' : 'MENANG!';
+    if (player == 'semut') return (comp == 'orang') ? 'KALAH!' : 'MENANG!';
 }
 
 
@@ -32,12 +32,17 @@ function acakGambar() {
 }
 
 //LEBIH EFEKTIF
+
 const pilihan = document.querySelectorAll('li img');
+let hComputer = 0;
+let hPlayer = 0;
 pilihan.forEach(function (pil) {
     pil.addEventListener('click', function () {
         const pilihanComputer = getPilihanComputer();
         const pilihanPlayer = pil.className;
         const hasil = getHasil(pilihanComputer, pilihanPlayer)
+        const sComputer = document.querySelector('.scomp');
+        const sPlayer = document.querySelector('.splayer');
 
         acakGambar();
 
@@ -45,14 +50,30 @@ pilihan.forEach(function (pil) {
             const imgComputer = document.querySelector('.img-komputer');
             imgComputer.setAttribute('src', '' + pilihanComputer + '.png');
             const info = document.querySelector('.info');
+
             info.innerHTML = hasil;
+            if (hasil === 'MENANG!') {
+                info.style.backgroundColor = 'limegreen';
+                hPlayer += 1;
+                sPlayer.innerHTML = hPlayer;
+            }
+            if (hasil === 'KALAH!') {
+                info.style.backgroundColor = 'crimson';
+                hComputer += 1;
+                sComputer.innerHTML = hComputer;
+            }
+            if (hasil === 'SERI!') {
+                info.style.backgroundColor = 'white';
+            }
         }, 1000)
         // const imgComputer = document.querySelector('.img-komputer');
         // imgComputer.setAttribute('src', '' + pilihanComputer + '.png');
         // const info = document.querySelector('.info');
         // info.innerHTML = hasil;
-    })
-})
+    });
+});
+
+
 
 //KURANG EFEKTIF
 // const pGajah = document.querySelector('.gajah');
